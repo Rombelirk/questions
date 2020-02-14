@@ -1,0 +1,29 @@
+.score {
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    height: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.try-again {
+    padding: 20px;
+    cursor: pointer;
+    color: green;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.result {
+    font-size: 40px;
+}

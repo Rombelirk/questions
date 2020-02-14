@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Questions from './components/Questions/Questions'
+import Score from './components/Score/Score'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  const [finalResult, setFinalResult] = useState(null)
+  const completeTesting = (result) => {
+    setFinalResult(result)
+  }
+  const tryAgain = () => {
+    setFinalResult(null);
+  }
+  if (finalResult === null) {
+    return <Questions completeTesting={completeTesting} />
+  }
+  return <Score tryAgain={tryAgain} finalResult={finalResult} />
 }
 
 export default App;
